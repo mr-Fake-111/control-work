@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int max = 0;
+        int maxDel = 0;
+        for (int i = 120115; i <= 120200 ; i++) {
+            int curr = calcVal(i);
+            if(curr >= maxDel) {
+                max = i;
+                maxDel = curr;
+            }
+        }
+        System.out.println(maxDel+" "+max);
+    }
+    static int calcVal(int val) {
+        int res = 0;
+        for (int i = 1; i <= val ; i++) {
+            if(val % i == 0) res++;
+        }
+        return res;
+    }
+}
